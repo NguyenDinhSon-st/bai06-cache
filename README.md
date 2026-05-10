@@ -1,17 +1,15 @@
-# Bài 5: Test Coverage & Quality Enforcement (JaCoCo)
+# Bài 6: CI/CD Pipeline Optimization & Caching
 
-## Tích hợp JaCoCo
+## Cấu hình cache
+Workflow sử dụng `actions/setup-java@v4` với `cache: 'maven'`.
 
-Đã cấu hình `jacoco-maven-plugin` trong `pom.xml` với 3 execution:
-- `prepare-agent`: gắn agent để thu thập dữ liệu coverage.
-- `report`: sinh báo cáo HTML trong `target/site/jacoco/`.
-- `check`: kiểm tra coverage, yêu cầu **INSTRUCTION coverage >= 80%**.
+## Kết quả thực nghiệm
+(Sẽ cập nhật sau khi push 2 lần)
 
-## Quy tắc coverage
+Lần push 1 (không cache) 
+Thời gian: 21s
+Cache hit: maven cache is not found
 
-```xml
-<limit>
-    <counter>INSTRUCTION</counter>
-    <value>COVEREDRATIO</value>
-    <minimum>0.80</minimum>
-</limit>
+## Minh chứng log
+Lần 1 : 
+Lần 2 : 
